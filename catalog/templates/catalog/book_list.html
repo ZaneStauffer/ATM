@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Card List</h1>
+  {% if card_list %}
+  <ul>
+    {% for card in card_list %}
+      <li>
+        <a href="{{ card.get_absolute_url }}">{{ card.owner }}</a> ({{card.balance}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no cards.</p>
+  {% endif %}
+{% endblock %}
+

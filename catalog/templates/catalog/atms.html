@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>ATMS</h1>
+
+    {% if atm_list %}
+    <ul>
+
+      {% for atm in atm_list %}
+     
+        <a href="{% url 'atm-detail' atm.pk %}">{{atm.atm_number}}</a> ({{ atm.address }})<br>
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no cards on this account.</p>
+    {% endif %}
+{% endblock %}
+

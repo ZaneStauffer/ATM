@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>From: {{ card_instance.owner }}</h1>
+  <p>Balance: {{ card_instance.balance }}</p>
+ 
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}
+<tr>
+  <th><label for="id_transfer_amount">Transfer Amount:</label></th>
+    <td>
+      <ul class="errorlist">
+        <li>Invalid Amount.</li>
+      </ul>
+      <input id="id_transfer_amount" name="transfer_amount" type="text" value="5" required>
+      <br>
+      <span class="helptext">Enter the amount to transfer.</span>
+    </td>
+</tr>

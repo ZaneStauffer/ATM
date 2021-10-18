@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Borrowed books</h1>
+
+    {% if card_list %}
+    <ul>
+
+      {% for card in card_list %}
+     
+        <a href="{% url 'card-detail' card.pk %}">{{card.owner}}</a> ({{ card.balance }})<br>
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no cards on this account.</p>
+    {% endif %}
+{% endblock %}
+

@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Local Library Home</h1>
+  <p>Welcome to ATM APP</p>
+
+  <p>Account Options:</p>
+  <ul>
+    <li><a href="{% url 'index' %}">Home</a></li>
+    <li><a href="//127.0.0.1:8000/catalog/mycards/">My Cards</a></li>
+    <li><strong>Accounts:</strong> {{ num_accounts }}</li>
+  </ul>
+  <p>Banking Options:</p>
+     <li><a href="//127.0.0.1:8000/catalog/withdraw/">Withdraw</a></li>
+     <li><a href="//127.0.0.1:8000/catalog/transfer/">Transfer</a></li>
+     <li><a href="//127.0.0.1:8000/catalog/balance/">Balance Enquiry</a></li>
+     <br><br>
+  </ul>
+  <p>Admin Options:</p>
+     <li><a href="//127.0.0.1:8000/catalog/admin_create_account/">Create Card</a></li>
+     <li><a href="//127.0.0.1:8000/catalog/atms/">View ATMS</a></li>
+     <br>
+  <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+{% endblock %}
+

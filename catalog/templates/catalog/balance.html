@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Accounts:</h1>
+    {% if account_list %}
+    <ul>
+      {% for account in account_list %}
+        <a href="{% url 'account-detail' account.pk %}">Account #: {{account.account_number}}</a>  - {{ account.name }} {{ account.address }} - Current Balance is ${{ account.balance }}
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>You have no account.</p>
+    {% endif %}
+{% endblock %}
